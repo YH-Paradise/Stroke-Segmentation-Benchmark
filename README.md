@@ -14,9 +14,9 @@ In this study, we investigate deep learning models for an effective and efficien
 We compare Convolutional Neural Networks (CNNs) and Transformer-based models, specifically employing 3D-UNet, 3D-UNet++, 3D-MobileViT, and 3D-SwinUNetR.
 The experimental results, utilizing DWI and ADC (apparent diffusion coefficient) images of 651 brain stroke patients, demonstrate that combining DWI and ADC images yields better segmentation performance than using DWI alone.
 
-## 🖼️ Qualitative Results
+## 🖼️ Methods
 ![Segmentation Results](images/overall_architecture.png)
-*(Figure description: Qualitative comparison of brain stroke segmentation results using different deep learning models.)*
+*(Figure description: Overall methodology. 8 different experimental settings are used in total. (2 types of inputs, four different model architectures))*
 
 ## 🚀 Key Findings & Performance
 Our experiments demonstrate that the Transformer-based **3D-SwinUNetR** achieved the highest performance. Furthermore, models trained on the combined DWI and ADC images outperformed those trained solely on DWI.
