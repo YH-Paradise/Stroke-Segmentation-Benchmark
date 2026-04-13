@@ -4,17 +4,17 @@ project_name: "Stroke-Segmentation"
 model_info:
   name: "swinunetr"          # choices: [unet, unetpp, mobilevit, swinunetr]
   input_type: "combined"     # choices: [single, combined]
-  in_channels: 2             # DWI + ADC 결합 시 2채널 [cite: 85]
-  out_channels: 1            # 병변 분할 (이진 분류) [cite: 72]
+  in_channels: 2             # If DWI and ADC are used together, input channels should be 2.
+  out_channels: 1            # A single channel binary mask
 
 training:
-  epochs: 100                # [cite: 80]
+  epochs: 100
   batch_size: 2
-  learning_rate: 0.001       # [cite: 80]
-  optimizer: "Adam"          # [cite: 80]
-  loss_function: "BCEDice"   # [cite: 68]
+  learning_rate: 0.001
+  optimizer: "Adam"
+  loss_function: "BCEDice"
 
 data:
-  image_size: [32, 256, 256] # 보간 후 크기 [cite: 100]
+  image_size: [32, 256, 256] # Image size after interpolation
   data_path: "./dataset/stroke_data"
   checkpoint_dir: "./weights/swinunetr_best.pth"
